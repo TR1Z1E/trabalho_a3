@@ -1,0 +1,175 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.top-bar {
+    width: 100%;
+    height: 109px;
+    background-color: #1e1e1e;
+    display: flex;  /* Alinha os elementos na horizontal */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 218px;
+}
+/* H1 Header */
+.h1-topBar{
+    font-size: 24px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 30px;
+}
+
+/* Logo do Header */
+.logo{
+    width: 47px;
+    height: 47px;
+    margin-top: 0px;
+}
+
+/* Estrutura principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+}
+/* Linha divisoria */
+.line{
+    height: 100%;
+    width: 1px;
+}
+
+/* Caixa de login */
+.login-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 6pc;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 521px;
+    height: 698px;
+    border-radius: 29px;
+    box-shadow: 0px 4px 7px 0px #00000025;
+    
+}
+/* Texto Login */
+.textLogin{
+    width: 311px;
+    font-size: 28px;
+    margin-bottom: 100px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* campos de e-mail e senha */
+#email{
+    width: 311px;
+    padding: 15px;
+    font-size: medium;
+    background: #f2f2f4;
+    border: none;
+    border-radius: 55px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#senha{
+    width: 311px;
+    padding: 15px;
+    font-size: medium;
+    background: #f2f2f4;
+    border: none;
+    border-radius: 55px;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Botão login */
+#btnEntrar {
+    width: 311px;
+    padding: 15px;
+    font-size: medium;
+    background: #fe8100;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 55px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 70px;
+}
+
+/* Texto possui conta */
+.text-bottom-login{
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    font-weight: 400;
+}
+
+/* Texto Mensagem de erro e Sucesso */
+#mensagem{
+    font-family: "Poppins", sans-serif;
+    font-size: small;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 311px;
+}
+
+#mensagem.erro{
+    color: red;
+}
+
+#mensagem.sucesso{
+    color: #00e749;
+}
+
+/* Texto Criar  */
+.criar{
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fe8100;
+}
+
+/* Linha divisora de sessão */
+/* .line{
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--white-500);
+    margin: 0 100px;
+    color: #1e1e1e;
+} */
+
+/* Caixa da imagem */
+ .image-box {
+    position: relative;
+    display: flex;
+    margin-right: 10pc;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 521px;
+    height: 698px;
+    z-index: 200px;
+}
+
+/* Texto sobre a imagem */
+.welcome-text {
+    position: absolute;
+    width: 540px;
+    height: 120px;
+    top: 15px;
+    left: 15px;
+    color: #e9ecf2;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+} 

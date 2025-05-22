@@ -1,0 +1,58 @@
+[
+  {
+    "image": "src/assets/img/casa1.jpeg",
+    "price": "R$ 2.000.000",
+    "size": 132,
+    "bedrooms": 5,
+    "bathrooms": 4
+  },
+  {
+    "image": "src/assets/img/casa2.jpg",
+    "price": "R$ 1.400.000",
+    "size": 223,
+    "bedrooms": 4,
+    "bathrooms": 4
+  },
+  {
+    "image": "src/assets/img/casa3.jpg",
+    "price": "R$ 3.500.000",
+    "size": 341,
+    "bedrooms": 7,
+    "bathrooms": 6
+  },
+  {
+    "image": "src/assets/img/casa4.jpg",
+    "price": "R$ 2.200.000",
+    "size": 232,
+    "bedrooms": 5,
+    "bathrooms": 5
+  },
+  {
+    "image": "src/assets/img/casa5.jpg",
+    "price": "R$ 2.750.000",
+    "size": 112,
+    "bedrooms": 5,
+    "bathrooms": 3
+  },
+  {
+    "image": "src/assets/img/casa6.jpg",
+    "price": "R$ 1.200.000",
+    "size": 92,
+    "bedrooms": 4,
+    "bathrooms": 3
+  },
+  {
+    "image": "src/assets/img/casa7.jpg",
+    "price": "R$ 2.460.000",
+    "size": 149,
+    "bedrooms": 5,
+    "bathrooms": 4
+  },
+  {
+    "image": "src/assets/img/casa8.jpg",
+    "price": "R$ 3.100.000",
+    "size": 132,
+    "bedrooms": 6,
+    "bathrooms": 5
+  }
+]
