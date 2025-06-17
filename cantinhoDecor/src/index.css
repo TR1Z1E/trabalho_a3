@@ -141,7 +141,7 @@ body {
 }
 
 .navbar-links button:hover {
-    color: #bfdbfe; /* blue-200 */
+    color: #3b8cf0; /* blue-200 */
     transform: scale(1.05);
 }
 

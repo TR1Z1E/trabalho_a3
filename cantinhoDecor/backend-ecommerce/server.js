@@ -4,7 +4,7 @@ const mongoose = require('mongoose'); // Declaração da biblioteca Mongoose par
 const cors = require('cors'); // Declaração da biblioteca CORS para permitir requisições de outras origens
 const authRoutes = require('./routes/auth'); // Importa as rotas de autenticação
 const productRoutes = require('./routes/products'); // Importa as rotas de produtos
-const orderRoutes = require('./routes/orders'); // NOVO: Importa as rotas de pedidos
+const orderRoutes = require('./routes/order'); // NOVO: Importa as rotas de pedidos
 
 const app = express();
 const PORT = process.env.PORT || 3000; // Define a porta do servidor, padrão 3000
