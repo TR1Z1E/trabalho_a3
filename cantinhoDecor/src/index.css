@@ -1,0 +1,610 @@
+/* src/index.css */
+/* Estilos Globais e Reset */
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: #333; /* Cor do texto padrão */
+  background-color: #f8f8f8; /* Cor de fundo padrão clara */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+}
+
+/* Adicione a fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+/* Layout e Utilitários */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-inner-xl {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.rounded-xl { border-radius: 0.75rem; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-full { border-radius: 9999px; }
+
+
+/* Animações */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 1s ease-out forwards;
+}
+
+/* Transições */
+.transition-all { transition: all 0.3s ease-in-out; }
+.transition-colors { transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; }
+.transition-transform { transition: transform 0.3s ease-in-out; }
+
+/* Hover Effects */
+.hover-scale-105:hover { transform: scale(1.05); }
+.hover-shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+
+/* Seções/Páginas */
+.page-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.text-primary { color: #2563eb; } /* Azul escuro */
+.bg-primary { background-color: #2563eb; }
+.text-secondary { color: #6d28d9; } /* Roxo */
+.bg-secondary { background-color: #6d28d9; }
+.text-success { color: #16a34a; } /* Verde */
+.bg-success { background-color: #16a34a; }
+.text-danger { color: #dc2626; } /* Vermelho */
+.bg-danger { background-color: #dc2626; }
+.text-info { color: #0891b2; } /* Ciano */
+.bg-info { background-color: #0891b2; }
+
+
+/* Estilos Específicos do Navbar */
+.navbar {
+    background: linear-gradient(to right, #2563eb, #6d28d9); /* Azul-roxo */
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 2.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navbar-links button {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* rounded-full */
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-links button:hover {
+    color: #bfdbfe; /* blue-200 */
+    transform: scale(1.05);
+}
+
+.navbar-links .btn-login {
+    background-color: #22c55e; /* green-500 */
+}
+.navbar-links .btn-login:hover {
+    background-color: #16a34a; /* green-600 */
+}
+
+.navbar-links .btn-register {
+    background-color: #a855f7; /* purple-500 */
+}
+.navbar-links .btn-register:hover {
+    background-color: #9333ea; /* purple-600 */
+}
+
+.navbar-links .btn-logout {
+    background-color: #ef4444; /* red-500 */
+}
+.navbar-links .btn-logout:hover {
+    background-color: #dc2626; /* red-600 */
+}
+
+.navbar-links .user-greeting {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-right: 1.5rem;
+}
+
+/* Estilos para Formulários (Login/Registro) */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #bfdbfe, #c7d2fe); /* Gradient suave */
+}
+
+.form-card {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 28rem; /* 448px */
+    transition: all 0.5s ease-in-out;
+}
+
+.form-card:hover {
+    transform: scale(1.05);
+}
+
+.form-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: #1f2937; /* gray-800 */
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #374151; /* gray-700 */
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db; /* gray-300 */
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3b82f6; /* blue-500 */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.form-submit-button {
+    width: 100%;
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.form-submit-button:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: scale(1.05);
+}
+
+.login-link-text, .register-link-text {
+    margin-top: 2rem;
+    text-align: center;
+    color: #4b5563; /* gray-600 */
+}
+
+.login-link-text button, .register-link-text button {
+    color: #2563eb; /* blue-600 */
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.message {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+.message.success { color: #16a34a; } /* green-600 */
+.message.error { color: #dc2626; } /* red-600 */
+
+/* Estilos da Página Inicial (HomePage) */
+.homepage-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    color: #1f2937; /* gray-800 */
+    margin-bottom: 3rem;
+}
+.homepage-subtitle {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #4b5563; /* gray-600 */
+    margin-bottom: 3rem;
+    max-width: 48rem; /* max-w-3xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.featured-products-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: #1d4ed8; /* blue-700 */
+    margin-bottom: 2.5rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.view-all-products-button {
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    margin-top: 3rem;
+    display: block; /* Para centralizar com margin: auto */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-all-products-button:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: scale(1.05);
+}
+
+.mission-section {
+    background-color: #f3f4f6; /* gray-100 */
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+.mission-text {
+    font-size: 1.125rem;
+    color: #374151; /* gray-700 */
+    text-align: center;
+    max-width: 64rem; /* max-w-4xl */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.625; /* leading-relaxed */
+}
+
+/* Estilos para ProductCard */
+.product-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #e5e7eb; /* gray-200 */
+}
+.product-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: scale(1.02); /* Escala menor para evitar grande deslocamento */
+}
+
+.product-card img {
+    width: 100%;
+    height: 12rem; /* h-48 */
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease-in-out;
+}
+.product-card img:hover {
+    transform: scale(1.1);
+}
+
+.product-card-content {
+    padding: 1.25rem; /* p-5 */
+}
+
+.product-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937; /* gray-800 */
+    margin-bottom: 0.5rem;
+}
+
+.product-card-price {
+    color: #4b5563; /* gray-600 */
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.product-card-button {
+    width: 100%;
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.product-card-button:hover {
+    background-color: #2563eb; /* blue-600 */
+    transform: scale(1.05);
+}
+
+/* Estilos para ProductListPage */
+.product-list-page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    color: #1f2937; /* gray-800 */
+    margin-bottom: 3rem;
+}
+
+.product-loading {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    color: #4b5563; /* gray-600 */
+    font-size: 1.25rem;
+}
+
+.spinner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid #f3f4f6; /* light gray */
+    border-top: 4px solid #2563eb; /* blue-500 */
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    animation: spin 1s linear infinite;
+    margin-top: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos para seções LLM (IA) */
+.llm-section {
+    background-color: #e0f2fe; /* blue-50 */
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-top: 3rem;
+}
+
+.llm-page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1d4ed8; /* blue-700 */
+    margin-bottom: 2rem;
+}
+
+.llm-intro-text {
+    font-size: 1.125rem;
+    color: #374151; /* gray-700 */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.llm-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.llm-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #93c5fd; /* blue-300 */
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    min-height: 6rem; /* Ajustável */
+    resize: vertical;
+    transition: all 0.2s ease-in-out;
+}
+
+.llm-textarea:focus {
+    outline: none;
+    border-color: #2563eb; /* blue-600 */
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+}
+
+.llm-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.primary-llm-button {
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+}
+.primary-llm-button:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: scale(1.02);
+}
+
+.secondary-llm-button {
+    background-color: #6b7280; /* gray-500 */
+    color: white;
+    margin-top: 1rem;
+}
+.secondary-llm-button:hover {
+    background-color: #4b5563; /* gray-600 */
+    transform: scale(1.02);
+}
+
+.llm-spinner {
+    border-top-color: #2563eb; /* blue-600 */
+    margin-bottom: 1rem;
+}
+
+.llm-error-message {
+    color: #dc2626; /* red-600 */
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.llm-result-box {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-top: 1.5rem;
+}
+
+.llm-result-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937; /* gray-800 */
+    margin-bottom: 1rem;
+}
+
+.llm-result-box p {
+    font-size: 1rem;
+    color: #374151; /* gray-700 */
+    white-space: pre-wrap; /* Preserva quebras de linha */
+}
+
+.llm-copy-message {
+    text-align: center;
+    color: #16a34a; /* green-600 */
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Rodapé (Footer) */
+.footer {
+    background-color: #1f2937; /* gray-800 */
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.footer p {
+    font-size: 1.125rem;
+}
+.footer .small-text {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #9ca3af; /* gray-400 */
+}
+
+/* Responsividade */
+@media (min-width: 640px) { /* sm breakpoint */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .homepage-title { font-size: 4rem; }
+    .llm-input-group {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .llm-textarea {
+        flex-grow: 1; /* Permite que o textarea ocupe o espaço disponível */
+    }
+    .llm-button {
+        flex-shrink: 0; /* Previne que o botão diminua */
+        width: auto; /* Volta para largura automática */
+    }
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .form-card { max-width: 32rem; } /* Maior para tablets */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .homepage-title { font-size: 5rem; }
+}
