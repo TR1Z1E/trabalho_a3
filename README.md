@@ -10,6 +10,11 @@ Seja você alguém procurando a primeira peça para um novo ambiente ou um entus
 
 ---
 
+## Link para a domumentação do projeto 
+[https://docs.google.com/document/d/11BajcD5jnVHGpp2lCFK46CKNjf2S5bpq/edit?usp=sharing&ouid=116155345541629559666&rtpof=true&sd=true)
+
+---
+
 ## Tecnologias Utilizadas
 
 Nosso projeto foi construído com as seguintes tecnologias robustas, garantindo uma experiência de usuário fluida e segura:
